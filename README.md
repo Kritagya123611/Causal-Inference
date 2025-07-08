@@ -1,69 +1,43 @@
-# React + TypeScript + Vite
+# 🌐 CausalLens
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CausalLens** is a browser-native, real-time causal inference platform that lets you upload data and uncover causal relationships — all directly in the browser using Pyodide and causal-learn.
 
-Currently, two official plugins are available:
+> 🔍 Go beyond correlation. Understand **what causes what** — interactively.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📈 Upload CSV files and automatically generate causal graphs (DAGs)
+- ⚡ Pure client-side: runs Python (via Pyodide) directly in the browser
+- 🔎 Uses [causal-learn](https://github.com/py-why/causal-learn) to discover causal structure (PC algorithm)
+- 🧠 Outputs Graphviz DOT and visualizes it with `d3-graphviz`
+- 🧪 Ready for real-time causal reasoning and counterfactuals (planned)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📸 Demo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![screenshot placeholder](https://your-screenshot-or-demo.gif)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧩 Tech Stack
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Component       | Tech                             |
+|----------------|----------------------------------|
+| Frontend       | React + Vite + Tailwind CSS      |
+| Graph Viewer   | d3-graphviz + pydot DOT rendering |
+| Causal Engine  | Pyodide + causal-learn (PC algo) |
+| Python Runtime | Pyodide (Python in WebAssembly)  |
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Kritagya123611/Causal-Inference.git
+cd Causal-Inference
+
